@@ -15,4 +15,8 @@ def readfile(path_to_file):
         bookreport(path_to_file, words, chars)
 
 if __name__ == '__main__':
-    sys.exit(readfile('books/frankenstein.txt'))
+    if len(sys.argv) != 2:
+        print(f"Usage: python3 {sys.argv[0]} <path_to_book>")
+        sys.exit(1)
+    
+    sys.exit(readfile(sys.argv[1]))
